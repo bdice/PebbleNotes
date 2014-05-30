@@ -291,7 +291,9 @@ function createTaskObjFromGoogle(t) {
 		done: t.status == "completed",
 		title: t.title,
 		hasNotes: "notes" in t,
-		notes: t.notes
+		notes: t.notes,
+    hasDue: "due" in t,
+    due: ("due" in t) ? (new Date(t.due)).toLocaleDateString() : ""
 	};
 }
 function doGetOneList(listId) {
@@ -327,7 +329,9 @@ function doGetOneList(listId) {
 					isDone: tasks[i].done?1:0,
 					title: tasks[i].title,
 					hasNotes: tasks[i].hasNotes?1:0,
-					notes: tasks[i].notes
+					notes: tasks[i].notes,
+          hasDue: tasks[i].hasDue?1:0,
+					due: tasks[i].due
 			});
 		}
 		sendMessage({

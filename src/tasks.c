@@ -187,8 +187,15 @@ void ts_set_item(int i, TS_Item data) {
 	if(data.notes) {
 		ts_items[i].notes = malloc(strlen(data.notes)+1);
 		strcpy(ts_items[i].notes, data.notes);
-	} else
+  } else {
 		ts_items[i].notes = NULL;
+  }
+  if(data.due) {
+    ts_items[i].due = malloc(strlen(data.due)+1);
+    strcpy(ts_items[i].due, data.due);
+  } else {
+    ts_items[i].due = NULL;
+  }
 	ts_count++;
 	menu_layer_reload_data(mlTasks);
 	LOG("Current count is %d", ts_count);

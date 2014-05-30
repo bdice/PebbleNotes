@@ -6,6 +6,7 @@ typedef struct {
 	bool done;
 	char* title;
 	char* notes;
+  char* due;
 } TS_Item;
 
 void ts_init();
