@@ -19,13 +19,13 @@ function ask(o) {
 	}
 	var req = new XMLHttpRequest();
 	req.open(p('method', (o.data?'POST':'GET')), o.url, true); // open async
-	headers = p('headers', {});
+	var headers = p('headers', {});
 	for(var h in headers)
 		req.setRequestHeader(h, headers[h]);
 	req.onload = function(e) {
 		if(req.readyState == 4) {
 			clearTimeout(xhrTimeout); // got response, no more need in timeout
-			text = req.responseText;
+			var text = req.responseText;
 			if(req.status == 200) {
 				console.log("xhr:success");
 				if(o.success)
@@ -125,7 +125,7 @@ function queryTasks(endpoint, params, success, method, send_data) {
  */
 function renewToken(success) {
 	console.log("Renewing token!");
-	refresh_token = g_refresh_token;
+	var refresh_token = g_refresh_token;
 	if(!refresh_token) {
 		displayError("No refresh token; please log in!", 401);
 		return;
@@ -186,7 +186,7 @@ var g_msg_transaction = null;
 function sendMessage(data, success, failure) {
 	function sendNext() {
 		g_msg_transaction = null;
-		next = g_msg_buffer.shift();
+		var next = g_msg_buffer.shift();
 		if(next) { // have another msg to send
 			sendMessage(next);
 		}
@@ -204,7 +204,7 @@ function sendMessage(data, success, failure) {
 					success();
 				sendNext();
 			},
-		   	function(e) {
+      function(e) {
 				console.log("Failed to send message for transactionId=" + e.data.transactionId +
 						", error is "+("message" in e.error ? e.error.message : "(none)"));
 				if(g_msg_transaction >= 0 && g_msg_transaction != e.data.transactionId)
@@ -400,7 +400,7 @@ Pebble.addEventListener("showConfiguration", function(e) {
 });
 Pebble.addEventListener("webviewclosed", function(e) {
 	console.log("webview closed: "+e.response);
-	result = {};
+	var result = {};
 	try {
 		if(('response' in e) && e.response) // we don't want to parse 'undefined'
 			result = JSON.parse(decodeURIComponent(e.response));

@@ -1,48 +1,50 @@
 {
-  "uuid": "5841ffd7-908f-4226-b687-bf6ff64cc8c5",
-  "shortName": "PebbleNotes",
-  "longName": "PebbleNotes",
-  "companyName": "MarSoft",
-  "versionCode": 1100,
-  "versionLabel": "1.0",
-  "watchapp": {
-    "watchface": false
-  },
-  "capabilities": [ "configurable" ],
-  "appKeys": {
-	  "code": 0,
-	  "scope": 1,
-	  "count": 5,
-	  "item": 6,
-	  "listId": 10,
-	  "taskId": 11,
-	  "title": 20,
-	  "size": 21,
-	  "isDone": 22,
-	  "hasNotes": 23,
-	  "notes": 24,
-	  "access_token": 40,
-	  "refresh_token": 41,
-	  "error": 50
-  },
-  "resources": {
-    "media": [
-      {
-        "type": "png",
-        "name": "ICON",
-        "file": "icon2.png",
-        "menuIcon": true
-      },
-      {
-        "type": "png",
-        "name": "TASK_UNDONE",
-        "file": "task_undone_16.png"
-      },
-      {
-        "type": "png",
-        "name": "TASK_DONE",
-        "file": "task_done_16.png"
-      }
-    ]
-  }
+    "longName": "PebbleNotes",
+    "companyName": "MarSoft",
+    "uuid": "5841ffd7-908f-4226-b687-bf6ff64cc8c5",
+    "capabilities": [
+        "configurable"
+    ],
+    "versionLabel": "1.0",
+    "appKeys": {
+        "title": 20,
+        "code": 0,
+        "listId": 10,
+        "count": 5,
+        "notes": 24,
+        "access_token": 40,
+        "error": 50,
+        "taskId": 11,
+        "size": 21,
+        "item": 6,
+        "isDone": 22,
+        "hasNotes": 23,
+        "refresh_token": 41,
+        "scope": 1
+    },
+    "resources": {
+        "media": [
+            {
+                "file": "images/task_done_16.png",
+                "name": "TASK_DONE",
+                "type": "png"
+            },
+            {
+                "file": "images/task_undone_16.png",
+                "name": "TASK_UNDONE",
+                "type": "png"
+            },
+            {
+                "file": "images/icon2.png",
+                "name": "ICON",
+                "type": "png",
+                "menuIcon": true
+            }
+        ]
+    },
+    "watchapp": {
+        "watchface": false
+    },
+    "shortName": "PebbleNotes",
+    "versionCode": 1100
 }
